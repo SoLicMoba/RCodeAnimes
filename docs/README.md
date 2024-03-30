@@ -4,7 +4,7 @@
 
 ### Esse projeto está sendo desenvolvido por mim mesmo como forma de estudos em programação.
 
-#### Estou usando uma API gratuita do site https://myanimelist.net/
+#### Estou usando uma API gratuita do site https://jikan.moe/
 
 O projeto não tem data prévia de finalização ou algo do tipo.
 
