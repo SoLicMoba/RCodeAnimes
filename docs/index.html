@@ -12,12 +12,14 @@
     <link rel="stylesheet" href="./assets/css/style.css" />
   </head>
   <body>
-    <header>
+    <header id="inicio">
       <div class="container">
         <div class="leftside">
-          <img src="./assets/img/Logo-header.png" alt="logo" width="180px" />
+          <a href="#inicio">
+            <img src="./assets/img/Logo-header.png" alt="logo" width="180px" />
+          </a>
         </div>
-        <div class="rightside ">
+        <div class="rightside">
           <nav>
             <div class="search" id="header-search">
               <img src="./assets/img/search.svg" style="filter: invert()" />
@@ -31,6 +33,15 @@
               <li><a href="#">Recomendações</a></li>
               <li><a href="#">Gêneros</a></li>
               <li><a href="#">Extras</a></li>
+              <li>
+                <a href="#"
+                  ><img
+                    title="random"
+                    src="./assets/img/random.svg"
+                    alt="random"
+                    style="filter: invert()"
+                /></a>
+              </li>
             </ul>
           </nav>
           <div class="menu">
@@ -45,6 +56,82 @@
         </div>
       </div>
     </header>
+
+    <main>
+      <section class="highlighted">
+        <div class="container">
+          <div class="leftside">
+            <h2 id="webSiteTitle">2024 | Temporada de </h2>
+            <div class="contentImgs">
+              <a href="#">
+                <img
+                  id="imgMain"
+                  src="#"
+                  alt="carregando..."
+                  style="object-fit: cover top"
+                />
+                <p
+                  id="animeActualMain"
+                  style="
+                    font-weight: bold;
+                    font-size: 18px;
+                    white-space: nowrap;
+                    overflow: hidden;
+                    text-overflow: ellipsis;
+                    max-width: 500px;
+                  "
+                ></p>
+                <p style="color: #353535; cursor: default">
+                  Mais conteúdo no decorrer do site!
+                </p>
+              </a>
+            </div>
+            <div id="quick-acess">
+              <a href="#seasons">Lista da temporada</a>
+              <a href="#">Recomendações</a>
+              <a href="#">Extras</a>
+            </div>
+          </div>
+          <div class="rightside">
+            <h2>Review de fãs</h2>
+            <div class="contentImgs2">
+              <a href="#">
+                <img src="./assets/img/noticiasimg.jpg" alt="mix-animes" />
+                <p>últimas reviews em primeiro mão!</p>
+              </a>
+              <h3 style="text-transform: uppercase">Alguns reviews rápidos</h3>
+              <div class="contentImgs-notices"></div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="seasons" id="seasons">
+        <div class="container">
+          <h1 id="seasons-h1">
+            <span>Novos</span> Animes e continuações da temporada de
+          </h1>
+          <div class="list-content">
+            <div class="arrows">
+              <img
+                src="./assets/img/left-arrow.svg"
+                alt="left-arrow"
+                style="filter: invert()"
+                id="left-arrow"
+              />
+              <img
+                src="./assets/img/right-arrow.svg"
+                alt="right-arrow"
+                style="filter: invert()"
+                id="right-arrow"
+              />
+            </div>
+          </div>
+          <div class="list">
+          </div>
+        </div>
+      </section>
+    </main>
 
     <script src="./assets/js/script.js"></script>
   </body>

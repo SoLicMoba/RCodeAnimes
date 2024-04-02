@@ -1,8 +1,14 @@
-@import url('https://fonts.googleapis.com/css2?family=Reddit+Mono:wght@200..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Reddit+Mono:wght@200..900&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap');
 
 :root {
     --bg: #121212;
     --default-light-text: #fff;
+    --gray-text: #aaa;
+    --bubble: #FF6EC1;
+}
+
+html {
+    scroll-behavior: smooth;
 }
 
 * {
@@ -23,6 +29,7 @@ body {
 .container {
     max-width: 1200px;
     margin: auto;
+    padding: 10px 40px;
 }
 
 a {
@@ -34,7 +41,11 @@ header {font-family: "Reddit Mono", monospace; text-transform: uppercase;}
 header .container {
     display: flex;
     align-items: center;
-    padding: 10px 40px;
+    padding-top: 15px;
+}
+
+header {
+    border-bottom: 4px #202020 solid;
 }
 
 header .leftside {
@@ -64,7 +75,7 @@ header .rightside nav .search {
 
 header .rightside nav .search input {
     background-color: transparent;
-    outline: none;
+    outline:none;
     border: solid 1px #fff;
     color: #fff;
     height: 32px;
@@ -83,6 +94,14 @@ header .rightside nav .search img {
 
 .menu {
     display: none;
+}
+
+header nav ul li a:hover {
+    transition: color 0.1s ease;
+}
+
+header nav ul li a:hover{
+    color: #FF6EC1;
 }
 
 @media (max-width: 768px) {
@@ -130,15 +149,14 @@ header .rightside nav .search img {
     }
 
     header .leftside img {
-        width: 100px;
+        width: 150px;
     }
 
     header .rightside nav .search input {
         min-width: 135px;
         font-size: 10px;
         padding: 0 0px 0px 20px;
-        height: 20px;
-        
+        height: 20px; 
     }
 
     header .rightside nav .search img {
@@ -162,5 +180,455 @@ header .rightside nav .search img {
 
     header .visible nav ul {
         font-size: 14px;
+    }
+}
+
+@media (max-width: 375px) {
+    header .leftside img {
+        width: 120px;
+    }
+
+    header .rightside nav .search input {
+        min-width: 105px;
+        font-size: 7.5px;
+        padding: 0 0px 0px 18px;
+        height: 20px; 
+    }
+
+    header .rightside nav .search img {
+        width: 12px;
+        top: 7px;
+    }
+}
+
+/* H I G H L I G H T E D */
+.highlighted .container {
+    display: flex;
+    font-family: "Ubuntu", sans-serif;
+    margin-top: 30px;
+}
+
+.highlighted .container .leftside {
+    flex: 2;
+    margin-right: 120px;
+}
+
+.highlighted .container .contentImgs {
+    width: 100%;
+}
+
+.highlighted .container .contentImgs img {
+    width: 80%;
+    height: 40vh;
+    object-fit: cover;
+    border-radius: 10px;
+    padding-top: 5px;
+}
+
+.highlighted .container .contentImgs p {
+    text-transform: uppercase;
+    font-size: 14px;
+    color: var(--gray-text);
+}
+
+.highlighted .container .rightside {
+    flex: 1;
+}
+
+.highlighted .container .rightside {
+    display: flex;
+    flex-direction: column;
+    align-items: end;
+}
+
+
+.highlighted .container .contentImgs2 {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.highlighted .container .contentImgs2 img {
+    width: 100%;
+    height: 30vh;
+    object-fit: cover;
+    border-radius: 10px;
+    padding-top: 5px;
+}
+
+.highlighted .container .contentImgs2 p {
+    text-transform: uppercase;
+    font-size: 14px;
+    color: var(--gray-text);
+}
+
+#quick-acess {
+    margin-top: 70px;
+    display: flex;
+    gap: 52px;
+}
+
+#quick-acess a {
+    border: #aaa 2px solid;
+    padding: 30px;
+    font-size: 14px;
+    font-weight: 500;
+    text-transform: uppercase;
+    border-radius: 2px;
+    transition: all 0.1s ease;
+}
+
+#quick-acess a:hover {
+    background-color: #000;
+    color: #FF6EC1;
+    border: #FF6EC1 2px solid;
+}
+
+.contentImgs-notices {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+}
+
+.contentImgs-notices a img {
+    max-height: 150px;
+}
+
+.newNoticeClicked {
+    position: absolute;
+    display: flex;
+    top: 120px;
+    justify-content: center;
+    gap: 50px;
+    left: 0;
+    width: 100vw;
+    height: calc(100vh);
+    background: #121212;
+}
+
+.newNoticeClicked a img {
+    max-height: 1000px;
+    cursor: default;
+}
+
+.newNoticeClicked p {
+    max-width: 40vw;
+    line-height: 20px;
+}
+
+@media (max-width: 1200px) {
+    .highlighted .container {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .highlighted .container .leftside {
+        flex: 1;
+        margin-right: 0px;
+    }
+
+    .highlighted .container .contentImgs {
+        display: flex;
+        justify-content: center;
+    }
+
+    .highlighted .container .rightside {
+        flex: 1;
+    }
+    .highlighted .container .leftside {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+    .highlighted .container .rightside {
+        margin-top: 50px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .highlighted .container .contentImgs img {
+        width: 100%;
+    }
+}
+
+@media (max-width: 600px) {
+    h2 {
+        font-size: 18px;
+    }
+
+    .highlighted .container .contentImgs p, .highlighted .container .contentImgs2 p {
+        text-transform: uppercase;
+        font-size: 12px;
+        color: var(--gray-text);
+    }
+
+    #quick-acess a {
+        border: #aaa 2px solid;
+        padding: 5px;
+        font-size: 11px;
+        font-weight: 500;
+        text-transform: uppercase;
+        border-radius: 2px;
+        transition: all 0.1s ease;
+    }
+
+    #quick-acess {
+        margin-top: 70px;
+        display: flex;
+        gap: 10px;
+    }
+}
+
+/* S E A S O N S */
+
+.seasons {
+    font-family: sans-serif;
+    margin-top: 50px;
+    margin-bottom: 100px;
+}
+
+.seasons .container .list {
+    margin-top: 50px;
+    display: flex;
+    gap: 30px;
+    overflow-x: scroll;
+    scroll-behavior: smooth;
+    background-color: #050505;
+    padding-bottom: 50px;
+}
+
+.seasons .container span {
+    color: var(--bubble);
+    text-transform: uppercase;
+    border: solid var(--bubble) 4px;
+    border-radius: 5px;
+    background-color: rgb(15, 15, 15);
+    padding: 5px;
+}
+
+.seasons .container .list {
+    scrollbar-color: #292929 #292929;
+    scrollbar-arrow-color: red;
+    scrollbar-width:thin;
+}
+
+.seasons .container .list:hover {
+    transition: all 0.2s linear;
+    scrollbar-color: #FF6EC1 #292929;
+}
+
+.seasons .container .list div img {
+    max-height: 350px;
+    min-height: 350px;
+    object-fit: fill;
+}
+
+.seasons .container .list div {
+    cursor: pointer;
+}
+
+.seasons .container .list div h2 {
+    font-size: 22px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    max-width: 250px;
+}
+
+.seasons .container .list div p {
+    font-size: 14px;
+}
+
+.seasons .container .list div:nth-child(1) {
+    margin-left: 10px;
+}
+
+*::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-track {
+    border-radius: 10px;
+}
+
+.seasons .container .list img {
+    width: 250px;
+    border-radius: 3px;
+}
+
+.seasons .container .list p:nth-child(4) {
+    color: var(--gray-text);
+}
+
+.seasons .container {
+    position: relative;
+}
+
+.seasons .container .arrows img {
+    width: 40px;
+    cursor: pointer;
+}
+
+.seasons .container .arrows img:nth-child(1) {
+    position: absolute;
+    left: 40px;
+    top:92px;
+    min-height: 465px;
+    background-color: rgba(255, 255, 255, 0.3);
+    transition: all 200ms ease-out;
+}
+
+.seasons .container .arrows img:nth-child(2) {
+    position: absolute;
+    right: 40px;
+    top: 92px;
+    min-height: 465px;
+    background-color: rgba(255, 255, 255, 0.3);
+    transition: all 200ms ease-out;
+}
+
+.seasons .container .arrows img:nth-child(1):hover,.seasons .container .arrows img:nth-child(2):hover {
+
+    background-color: rgba(255, 255, 255, 0.8);
+}
+
+.seasons .container .list div.cardClicked {
+    position: fixed;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    top: 0px;
+    padding-top: 50px;
+    justify-content: baseline;
+    gap: 10px;
+    left: 0px;
+    width: 100vw;
+    height: calc(100vh);
+    background-color: var(--bg);
+    cursor:auto;
+    
+}
+
+.seasons .container .list div.cardClicked p {
+    font-size: 16px;
+    color: #fff;
+}
+
+.seasons .container .list div.cardClicked #pSet {
+    overflow:hidden;
+    text-overflow: ellipsis;
+    white-space: wrap;
+    max-width: 400px;
+}
+
+.seasons .container .list div.cardClicked #pSet:before {
+    content: "Título: ";
+    color: var(--bubble);
+    cursor: default;
+}
+
+.seasons .container .list div.cardClicked .moreInfo div  {
+    display: flex;
+    gap: 5px;
+    cursor: text;
+}
+
+.seasons .container .list div.cardClicked .moreInfo {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    cursor: default;
+}
+
+.seasons .container .list div.cardClicked #gen,.seasons .container .list div.cardClicked #adp  {
+    display: none;
+}
+
+@media (max-width: 768px) {
+    h1#seasons-h1 {
+        font-size: 20px;
+    }
+
+    .seasons .container .list img {
+        padding-bottom: 10px;
+        padding-left: 5px;
+        padding-right: 5px;
+    }
+
+    .seasons .container .list div h2 {
+        font-size: 16px;
+    }
+
+    .seasons .container .list div p {
+        font-size: 12px;
+        margin-top: 3px;
+    }
+}
+
+@media (max-width: 425px) {
+    .contentImgs2 h3 {
+        font-size: 14px;
+        text-align: center;
+    }
+
+    .seasons .container span {
+        font-size: 12px;
+        border: solid var(--bubble) 1px;
+        border-radius: 3px;
+        padding: 3px;
+    }
+
+    .seasons .container .list div img {
+        padding-bottom: 0px;
+        padding-left: 0px;
+        padding-right: 0px;
+        object-fit: cover;
+        max-width: 150px;
+    }
+
+    h1#seasons-h1 {
+        font-size: 14px;
+        text-align: center;
+        line-height: 20px;
+    }
+
+    .seasons .container .list {
+        padding-bottom: 20px;
+    }
+
+    .seasons .container .arrows {
+        display: none;
+    }
+
+    .seasons .container .list div img {
+        max-height: 170px;
+        min-height: 170px;
+        max-width: 110px;
+        min-width: 110px;
+        object-fit: cover;
+        padding: 5px 0px 0px 3px;
+        border-radius: 6px;
+    }
+
+    .seasons .container .list div h2 {
+        font-size: 12px;
+        max-width: 110px;
+    }
+
+    .seasons .container .list div p {
+        font-size: 9px;
+        margin-top: 3px;
+    }
+
+    .seasons .container .list {
+        scrollbar-color: #FF6EC1 #292929;
+        scrollbar-arrow-color: red;
+        scrollbar-width:thin;
+    }
+    
+    .seasons .container .list:hover {
+        transition: all 0.2s linear;
     }
 }
