@@ -23,17 +23,14 @@ function mudarImgMenu() {
 }
 
 document.querySelector("#header-search-img").addEventListener("click", () => {
-  const search = document
-    .querySelector("#header-search-active");
+  const search = document.querySelector("#header-search-active");
   search.classList.toggle("search-area-active");
-  
+
   if (search.classList.contains("search-area-active")) {
     document.body.style.overflow = "hidden";
   } else {
     document.body.style.overflow = "visible";
   }
-    
-  
 });
 
 let timeoutId;
@@ -61,13 +58,15 @@ const inputGet = document
           listMain.innerHTML = "";
 
           for (let i of data) {
-            const genres = i.genres.map(genre => genre.name).join(", ");
+            const genres = i.genres.map((genre) => genre.name).join(", ");
             const newList = `
               <div class="content">
-                <img src="${i.images.jpg.image_url}" alt="photo">
-                <p id="ss-title">${i.title}</p>
-                <p id="ss-genre"><strong>Gênero:</strong> ${genres}</p>
-                <p id="ss-adp"><strong>Adaptação:</strong> ${i.source}</p>
+                <a href="${i.url}" target="_blank">
+                 <img src="${i.images.jpg.image_url}" alt="photo">
+                  <p id="ss-title">${i.title}</p>
+                  <p id="ss-genre"><strong>Gênero:</strong> ${genres}</p>
+                  <p id="ss-adp"><strong>Adaptação:</strong> ${i.source}</p>
+                </a>
               </div>
             `;
             listMain.innerHTML += newList;
@@ -92,7 +91,36 @@ const inputGet = document
 async function lastNotices() {
   const response = await fetch(`${api}/reviews/anime`);
   const json = await response.json();
-  /* console.log(json); */
+  console.log(json);
+
+  document
+    .querySelector("#reviewClickExpanse")
+    .addEventListener("click", () => {
+      document.querySelector(".newNotice").classList.add("newNoticeClicked");
+      document.body.style.overflow = "hidden";
+
+      const newNotice = document.querySelector(".newNotice");
+      for (let i of json.data) {
+        newNotice.innerHTML += `
+        <div class="area-review">
+            <div class="leftside">
+              <div class="leftside1">
+                <img src="${i.entry.images.jpg.large_image_url}"/>
+                <h2>${i.entry.title}</h2>
+              </div>
+              <div class="leftside2">
+                <p>Nota do usuário: ${i.score}</p>
+                <p>Recomendado pelo usuário? <span> ${i.tags[0]} </span></p>
+              </div>
+            </div>
+          <div class="rightside">
+            <h3>Review</h3>
+            <p lang="en">${i.review}</p>
+          </div>
+        </div>
+      `;
+      }
+    });
 
   const img1 = json.data[0].entry.images.jpg.large_image_url;
   const title1 = json.data[0].entry.title;
@@ -223,10 +251,10 @@ async function seasons() {
 
   function addNewContent() {
     let nameSeasons = {
-      spring: "Primavera 🌸",
-      summer: "Verão 😎",
-      fall: "Outono 🍁",
-      winter: "Inverno ❄️",
+      spring: " Primavera 🌸",
+      summer: " Verão 😎",
+      fall: " Outono 🍁",
+      winter: " Inverno ❄️",
     };
 
     const titleSeasons = document.querySelector("#seasons-h1");
@@ -310,6 +338,54 @@ async function seasons() {
   addNewContent();
 }
 
+seasons();
+
+async function topAnimes() {
+  const response = await fetch(`${api}/top/anime`);
+  const json = await response.json();
+  const data = json.data;
+
+  const htmlList = document.querySelector(".listTopAnime");
+  for (let i of data) {
+    const newList = document.createElement("div");
+    newList.innerHTML += `
+      <img class="imgAnimeList" src="${i.images.jpg.large_image_url}" alt="${i.title}"/>
+      <h2 id="pSet" title="${i.title}">${i.title}</h2>
+      <p id="gen">Gênero: ${i.genres[0].name}</p>
+      <p id="adp">Adaptação: ${i.source}</p>
+      <p id="rank">Rank #${i.rank}</p>
+      `;
+    htmlList.appendChild(newList);
+  }
+}
+topAnimes();
+
+async function topMangas() {
+  const response = await fetch(`${api}/top/manga`);
+  const json = await response.json();
+  const data = json.data;
+
+  const htmlList = document.querySelector(".listTopManga");
+  for (let i of data) {
+    const newList = document.createElement("div");
+    newList.innerHTML += `
+      <img class="imgAnimeList" src="${i.images.jpg.large_image_url}" alt="${i.title}"/>
+      <h2 id="pSet" title="${i.title}">${i.title}</h2>
+      <p id="gen">Gênero: ${i.genres[0].name}</p>
+      <p id="adp">Adaptação: ${i.source}</p>
+      <p id="rank">Rank #${i.rank}</p>
+      `;
+    htmlList.appendChild(newList);
+  }
+}
+topMangas();
+
+async function topTeste() {
+  const response = await fetch(`https://api.jikan.moe/v4/random/anime`);
+  const json = await response.json();
+}
+topTeste();
+
 document.addEventListener("DOMContentLoaded", function () {
   const scrollList = document.querySelector(".list");
   const left = document.querySelector("#left-arrow");
@@ -323,4 +399,28 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 });
 
-seasons();
+document.addEventListener("DOMContentLoaded", function () {
+  const scrollList = document.querySelector(".listTopAnime");
+  const left = document.querySelector("#left-arrow3");
+  const right = document.querySelector("#right-arrow3");
+
+  right.addEventListener("click", () => {
+    scrollList.scrollLeft += 750;
+  });
+  left.addEventListener("click", () => {
+    scrollList.scrollLeft -= 750;
+  });
+});
+
+document.addEventListener("DOMContentLoaded", function () {
+  const scrollList = document.querySelector(".listTopManga");
+  const left = document.querySelector("#left-arrow4");
+  const right = document.querySelector("#right-arrow4");
+
+  right.addEventListener("click", () => {
+    scrollList.scrollLeft += 750;
+  });
+  left.addEventListener("click", () => {
+    scrollList.scrollLeft -= 750;
+  });
+});

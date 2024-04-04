@@ -34,18 +34,9 @@
               />
             </div>
             <ul>
-              <li><a href="#">Recomendações</a></li>
-              <li><a href="#">Gêneros</a></li>
-              <li><a href="#">Extras</a></li>
-              <li>
-                <a href="#"
-                  ><img
-                    title="random"
-                    src="./assets/img/random.svg"
-                    alt="random"
-                    style="filter: invert()"
-                /></a>
-              </li>
+                <li><a href="#seasons">Temporada</a></li>
+              <li><a href="#topAnime">Recomendações</a></li>
+              <li><a href="#">Em-breve</a></li>
             </ul>
           </nav>
           <div class="menu">
@@ -65,7 +56,11 @@
       <section id="header-search-active" class="">
         <div class="sectionSearch-search">
           <div id="ss-search">
-            <input type="text" placeholder="Pesquise pelo nome..." id="input-sectionSearch"/>
+            <input
+              type="text"
+              placeholder="Pesquise pelo nome..."
+              id="input-sectionSearch"
+            />
           </div>
           <div class="sectionSearch-content">
             <!-- <div class="content">
@@ -80,7 +75,7 @@
       <section class="highlighted">
         <div class="container">
           <div class="leftside">
-            <h2 id="webSiteTitle">2024 | Temporada de </h2>
+            <h2 id="webSiteTitle">2024 | Temporada de</h2>
             <div class="contentImgs">
               <a href="#">
                 <img
@@ -107,14 +102,15 @@
             </div>
             <div id="quick-acess">
               <a href="#seasons">Lista da temporada</a>
-              <a href="#">Recomendações</a>
-              <a href="#">Extras</a>
+              <a href="#topAnime">Recomendações</a>
+              <a href="#">Em-Breve</a>
             </div>
           </div>
           <div class="rightside">
             <h2>Review de fãs</h2>
             <div class="contentImgs2">
-              <a href="#">
+              <div class="newNotice"></div>
+              <a href="#" id="reviewClickExpanse">
                 <img src="./assets/img/noticiasimg.jpg" alt="mix-animes" />
                 <p>últimas reviews em primeiro mão!</p>
               </a>
@@ -151,6 +147,54 @@
             </div>
           </div>
           <div class="list"></div>
+        </div>
+      </section>
+      <section class="topAnime" id="topAnime">
+        <div class="container">
+          <div id="h1id3">
+            <h1 id="seasons3-h1"><span>POP</span> Animes Populares 🔥</h1>
+          </div>
+          <div class="list-content">
+            <div class="arrows">
+              <img
+                src="./assets/img/left-arrow.svg"
+                alt="left-arrow"
+                style="filter: invert()"
+                id="left-arrow3"
+              />
+              <img
+                src="./assets/img/right-arrow.svg"
+                alt="right-arrow"
+                style="filter: invert()"
+                id="right-arrow3"
+              />
+            </div>
+          </div>
+          <div class="listTopAnime"></div>
+        </div>
+      </section>
+      <section class="topManga" id="topManga">
+        <div class="container">
+          <div id="h1id4">
+            <h1 id="seasons4-h1"><span>POP</span> Mangás Populares 🔥</h1>
+          </div>
+          <div class="list-content">
+            <div class="arrows">
+              <img
+                src="./assets/img/left-arrow.svg"
+                alt="left-arrow"
+                style="filter: invert()"
+                id="left-arrow4"
+              />
+              <img
+                src="./assets/img/right-arrow.svg"
+                alt="right-arrow"
+                style="filter: invert()"
+                id="right-arrow4"
+              />
+            </div>
+          </div>
+          <div class="listTopManga"></div>
         </div>
       </section>
     </main>

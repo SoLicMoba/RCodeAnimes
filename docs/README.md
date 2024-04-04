@@ -37,7 +37,7 @@ Observações: Como pode ver o projeto não tem muitas tecnologias devido as min
     - Essa sessão faz junção com a primeira sessão “Sessão de animes da temporada”.
     - Sessão criada mas ainda não executa todas as funções que se espera, e nenhuma API foi adicionada ainda.
 
-### Dia 3 - Progressão na Listagem e Responsividade
+### Dia 3 - Progressão na Listagem e Responsividade(4h)
 > Hoje eu progredi muito na tarefa que tinha ficado no dia anterior que era a de dar melhorias na listagem de animes de temporada.
 
 > **Progresso:**
@@ -55,6 +55,20 @@ Observações: Como pode ver o projeto não tem muitas tecnologias devido as min
 - **Atualização 1 (🟢):** Quando o usuário clica na lupa de pesquisa, agora ela abre uma "nova página" onde ele pode pesquisar por um conteúdo específico e é carregado 25 resultados (no momento só aceita nomes de animes).
 - **Atualização 2 (🟢):** Melhorado o Design para dispositívos móveis.
 
+### Dia 5 - Nova sessão: Review de usuários. (3h)
+> Hoje eu criei uma nova sessão que mostra reviews de usuários que falaram sobre o anime, lembrando que eu estou utilizando a API Jikan.moe, e por tanto, as reviews dos usuários são resgatadas diretamente do MyAnimeList
+
+> **Progresso:**
+
+- **Atualização 1 (🟡):** Algumas partes do site estão sofrendo um pouco em questão da API, por conta de muitos requests, eu pesquisei e cheguei em um assunto chamado "getStorage para Cache de requests", porém como não tenho conhecimento nessa parte do JS, eu deixei o código como está, não conseguindo implementar todas as sessões novas que eu queria.
+- **Promessa 1 (❤️):** Em breve vou aprender sobre esse conceito, e vou refazer esse projeto, ou talvez outro mas com a mesma pegada desse, mas da próxima vez utilizando algum framework que provavelmente vai ser o React.JS já que já tenho alguma noção dele e me sinto mais confortável em trabalhar usando ele.
+- **Atualização 2 (🟢):** Melhorado algumas sessões no quesito responsividade para telas menores.
+
+- **Atualização 2 (🟡):** O site está funcional para navegadores no dedsktops, porém em dispositivos móveis pode surgir alguns problemas na troca de página ao clicar em cards, em breve pretendo arrumar isso.
+
+> Creio que seja isso, o site está quase pronto, e pela primeira vez eu fiz um projeto do início ao fim, não precisando de muita ajuda da web e ter conseguido aprender com os erros de logs, como dizia um grande sábio:
+
+> A programação é = tentar algo novo => errar => pesquisar => (resolver) { return; }
 
 ## License
 Copyright (c) 2024 Richard Re'Code

@@ -42,10 +42,13 @@ header .container {
     display: flex;
     align-items: center;
     padding-top: 15px;
+    z-index: 98;
+
 }
 
 header {
     border-bottom: 4px #202020 solid;
+    
 }
 
 header .leftside {
@@ -244,6 +247,7 @@ header nav ul li a:hover{
 @media (max-width: 768px) {
     .menu {
         display: flex;
+        z-index: 999;
     }
 
     header .rightside {
@@ -268,11 +272,13 @@ header nav ul li a:hover{
         padding: 90px 40px;
         top: 0px;
         display: flex;
-        width: 60%;
-        height: 100vh;
-        background: #000;
+        width: 50%;
+        height: 30vh;
+        border-bottom-left-radius: 10px;
+        background: #000000d2;
         flex-direction: column;
         text-align: end;
+        z-index: 999;
     }
     header .visible nav ul li a:hover{
         padding: 10px;
@@ -434,16 +440,47 @@ header nav ul li a:hover{
     max-height: 150px;
 }
 
+#reviewClickExpanse {
+    position: relative;
+}
+
+#reviewClickExpanse::before {
+    content: "";
+    width: 335px;
+    border-radius: 10px;
+    height: 325px;
+    top: 0;
+    left: 0;
+    position: absolute;
+    background-color: rgba(0, 0, 0, 0.5)
+}
+
+#reviewClickExpanse::after {
+    content: "Clique em mim";
+    width: 175px;
+    border-radius: 10px;
+    height: 25px;
+    top: 145px;
+    font-size: 22px;
+    background-color: #FF6EC1cc;
+    color: #ffffff;
+    padding: 5px;
+    left: 70px;
+    font-weight: bold;
+    position: absolute
+}
+
 .newNoticeClicked {
     position: absolute;
     display: flex;
-    top: 120px;
+    top: 110px;
     justify-content: center;
     gap: 50px;
     left: 0;
     width: 100vw;
     height: calc(100vh);
     background: #121212;
+    z-index: 90;
 }
 
 .newNoticeClicked a img {
@@ -456,7 +493,94 @@ header nav ul li a:hover{
     line-height: 20px;
 }
 
+.contentImgs2 .newNoticeClicked {
+    height: 100vh;
+    padding-bottom: 300px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow-y: scroll;
+    padding-top: 20px;
+    scrollbar-color: #222 #444;
+}
+
+.contentImgs2 .newNoticeClicked {
+    justify-content:unset;
+}
+
+.contentImgs2 .newNoticeClicked .area-review {
+    padding-left: 10px;
+    padding-top: 5px;
+    display: flex;
+    min-width: 1000px;
+    max-width: 1000px;
+    min-height: 500px;
+    background: #202020;
+    justify-content: space-between;
+}
+
+.contentImgs2 .newNoticeClicked .area-review .leftside img {
+    width: 300px;
+    height: 350px;
+}
+
+.contentImgs2 .newNoticeClicked .area-review .leftside {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    flex: 1;
+    max-width: 350px;
+}
+
+.contentImgs2 .newNoticeClicked .area-review .leftside h2 {
+    margin-bottom: 5px;
+    font-size: 20px;
+}
+
+.contentImgs2 .newNoticeClicked .area-review .leftside2 span {
+    color: var(--bubble);
+}
+
+.contentImgs2 .newNoticeClicked .leftside h2 {
+    max-width: 500px;
+}
+
+.contentImgs2 .newNoticeClicked .area-review .rightside {
+    display: flex;
+    max-height: 400px;
+    flex: 2;
+    text-align: start;
+    justify-content: start;
+    max-width: 500px;
+}
+.contentImgs2 .newNoticeClicked .area-review .rightside h3 {
+    padding: 5px 10px;
+    color: #777;
+}
+
+.contentImgs2 .newNoticeClicked .rightside p {
+    max-width: 500px;
+    font-size: 16px;
+    line-height: 24px;
+    overflow-y: auto;
+    scrollbar-color: #333 #444;
+    scrollbar-width: thin;
+    padding: 5px;
+}
+
 @media (max-width: 1200px) {
+    .contentImgs2 .newNoticeClicked .area-review {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        min-width:auto;
+        max-width: auto;
+        min-height: auto;
+        background: #202020;
+        justify-content: space-between;
+        padding: 10px 15px;
+    }
+
     .highlighted .container {
         display: flex;
         flex-direction: column;
@@ -686,6 +810,332 @@ header nav ul li a:hover{
     display: none;
 }
 
+/* Seasons 2 */
+
+.seasons2 {
+    font-family: sans-serif;
+    margin-top: 50px;
+    margin-bottom: 100px;
+}
+
+.seasons2 .container .list2 {
+    margin-top: 50px;
+    display: flex;
+    gap: 30px;
+    overflow-x: scroll;
+    scroll-behavior: smooth;
+    background-color: #050505;
+    padding-bottom: 50px;
+}
+
+.seasons2 .container span {
+    color: var(--bubble);
+    text-transform: uppercase;
+    border: solid var(--bubble) 4px;
+    border-radius: 5px;
+    background-color: rgb(15, 15, 15);
+    padding: 5px;
+}
+
+.seasons2 .container .list2 {
+    scrollbar-color: #292929 #292929;
+    scrollbar-arrow-color: red;
+    scrollbar-width:thin;
+}
+
+.seasons2 .container .list2:hover {
+    transition: all 0.2s linear;
+    scrollbar-color: #FF6EC1 #292929;
+}
+
+.seasons2 .container .list2 div img {
+    max-height: 350px;
+    min-height: 350px;
+    object-fit: fill;
+}
+
+.seasons2 .container .list2 div {
+    cursor: pointer;
+}
+
+.seasons2 .container .list2 div h2 {
+    font-size: 22px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    max-width: 250px;
+}
+
+.seasons2 .container .list2 div p {
+    font-size: 14px;
+}
+
+.seasons2 .container .list2 div:nth-child(1) {
+    margin-left: 10px;
+}
+
+*::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-track {
+    border-radius: 10px;
+}
+
+.seasons2 .container .list2 img {
+    width: 250px;
+    border-radius: 3px;
+}
+
+.seasons2 .container .list2 p:nth-child(4) {
+    color: var(--gray-text);
+}
+
+.seasons2 .container {
+    position: relative;
+}
+
+.seasons2 .container .arrows img {
+    width: 40px;
+    cursor: pointer;
+}
+
+.seasons2 .container .arrows img:nth-child(1) {
+    position: absolute;
+    left: 40px;
+    top:88px;
+    min-height: 445px;
+    background-color: rgba(255, 255, 255, 0.3);
+    transition: all 200ms ease-out;
+}
+
+.seasons2 .container .arrows img:nth-child(2) {
+    position: absolute;
+    right: 40px;
+    top:88px;
+    min-height: 445px;
+    background-color: rgba(255, 255, 255, 0.3);
+    transition: all 200ms ease-out;
+}
+
+.seasons2 .container .arrows img:nth-child(1):hover,.seasons2 .container .arrows img:nth-child(2):hover {
+    background-color: rgba(255, 255, 255, 0.8);
+}
+
+.seasons2 .container .list2 div.cardClicked {
+    position: fixed;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    top: 0px;
+    padding-top: 50px;
+    justify-content: baseline;
+    gap: 10px;
+    left: 0px;
+    width: 100vw;
+    height: calc(100vh);
+    background-color: var(--bg);
+    cursor:auto; 
+}
+
+.seasons2 .container .list2 div.cardClicked p {
+    font-size: 16px;
+    color: #fff;
+}
+
+.seasons2 .container .list2 div.cardClicked #pSet {
+    overflow:hidden;
+    text-overflow: ellipsis;
+    white-space: wrap;
+    max-width: 400px;
+}
+
+.seasons2 .container .list2 div.cardClicked #pSet:before {
+    content: "Título: ";
+    color: var(--bubble);
+    cursor: default;
+}
+
+.seasons2 .container .list2 div.cardClicked .moreInfo div  {
+    display: flex;
+    gap: 5px;
+    cursor: text;
+}
+
+.seasons2 .container .list2 div.cardClicked .moreInfo {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    cursor: default;
+}
+
+.seasons2 .container .list2 div.cardClicked #gen,.seasons2 .container .list2 div.cardClicked #adp  {
+    display: none;
+}
+
+/* TopAnimes */
+
+.topAnime {
+    font-family: sans-serif;
+    margin-top: 50px;
+    margin-bottom: 100px;
+}
+
+.topAnime .container .listTopAnime {
+    margin-top: 50px;
+    display: flex;
+    gap: 30px;
+    overflow-x: scroll;
+    scroll-behavior: smooth;
+    background-color: #050505;
+    padding-bottom: 50px;
+}
+
+.topAnime .container span {
+    color: var(--bubble);
+    text-transform: uppercase;
+    border: solid var(--bubble) 4px;
+    border-radius: 5px;
+    background-color: rgb(15, 15, 15);
+    padding: 5px;
+}
+
+.topAnime .container .listTopAnime {
+    scrollbar-color: #292929 #292929;
+    scrollbar-arrow-color: red;
+    scrollbar-width:thin;
+}
+
+.topAnime .container .listTopAnime:hover {
+    transition: all 0.2s linear;
+    scrollbar-color: #FF6EC1 #292929;
+}
+
+.topAnime .container .listTopAnime div img {
+    max-height: 350px;
+    min-height: 350px;
+    object-fit: fill;
+}
+
+.topAnime .container .listTopAnime div {
+    cursor: pointer;
+}
+
+.topAnime .container .listTopAnime div h2 {
+    font-size: 22px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    max-width: 250px;
+}
+
+.topAnime .container .listTopAnime div p {
+    font-size: 14px;
+}
+
+.topAnime .container .listTopAnime div:nth-child(1) {
+    margin-left: 10px;
+}
+
+*::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-track {
+    border-radius: 10px;
+}
+
+.topAnime .container .listTopAnime img {
+    width: 250px;
+    border-radius: 3px;
+}
+
+.topAnime .container .listTopAnime p:nth-child(4) {
+    color: var(--gray-text);
+}
+
+.topAnime .container {
+    position: relative;
+}
+
+.topAnime .container .arrows img {
+    width: 40px;
+    cursor: pointer;
+}
+
+.topAnime .container .arrows img:nth-child(1) {
+    position: absolute;
+    left: 40px;
+    top:88px;
+    min-height: 445px;
+    background-color: rgba(255, 255, 255, 0.3);
+    transition: all 200ms ease-out;
+}
+
+.topAnime .container .arrows img:nth-child(2) {
+    position: absolute;
+    right: 40px;
+    top:88px;
+    min-height: 445px;
+    background-color: rgba(255, 255, 255, 0.3);
+    transition: all 200ms ease-out;
+}
+
+.topAnime .container .arrows img:nth-child(1):hover,.topAnime .container .arrows img:nth-child(2):hover {
+    background-color: rgba(255, 255, 255, 0.8);
+}
+
+.topAnime .container .listTopAnime div.cardClicked {
+    position: fixed;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    top: 0px;
+    padding-top: 50px;
+    justify-content: baseline;
+    gap: 10px;
+    left: 0px;
+    width: 100vw;
+    height: calc(100vh);
+    background-color: var(--bg);
+    cursor:auto; 
+}
+
+.topAnime .container .listTopAnime div.cardClicked p {
+    font-size: 16px;
+    color: #fff;
+}
+
+.topAnime .container .listTopAnime div.cardClicked #pSet {
+    overflow:hidden;
+    text-overflow: ellipsis;
+    white-space: wrap;
+    max-width: 400px;
+}
+
+.topAnime .container .listTopAnime div.cardClicked #pSet:before {
+    content: "Título: ";
+    color: var(--bubble);
+    cursor: default;
+}
+
+.topAnime .container .listTopAnime div.cardClicked .moreInfo div  {
+    display: flex;
+    gap: 5px;
+    cursor: text;
+}
+
+.topAnime .container .listTopAnime div.cardClicked .moreInfo {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    cursor: default;
+}
+
+.topAnime .container .listTopAnime div.cardClicked #gen,.topAnime .container .list2 div.cardClicked #adp  {
+    display: none;
+}
+
 @media (max-width: 768px) {
     h1#seasons-h1 {
         font-size: 20px;
@@ -705,11 +1155,191 @@ header nav ul li a:hover{
         font-size: 12px;
         margin-top: 3px;
     }
+
+    h1#seasons2-h1 {
+        font-size: 20px;
+    }
+
+    .seasons2 .container .list2 img {
+        padding-bottom: 10px;
+        padding-left: 5px;
+        padding-right: 5px;
+    }
+
+    .seasons2 .container .list2 div h2 {
+        font-size: 16px;
+    }
+
+    .seasons2 .container .list2 div p {
+        font-size: 12px;
+        margin-top: 3px;
+    }
+}
+
+/* Top Manga */
+
+.topManga {
+    font-family: sans-serif;
+    margin-top: 50px;
+    margin-bottom: 100px;
+}
+
+.topManga .container .listTopManga {
+    margin-top: 50px;
+    display: flex;
+    gap: 30px;
+    overflow-x: scroll;
+    scroll-behavior: smooth;
+    background-color: #050505;
+    padding-bottom: 50px;
+}
+
+.topManga .container span {
+    color: var(--bubble);
+    text-transform: uppercase;
+    border: solid var(--bubble) 4px;
+    border-radius: 5px;
+    background-color: rgb(15, 15, 15);
+    padding: 5px;
+}
+
+.topManga .container .listTopManga {
+    scrollbar-color: #292929 #292929;
+    scrollbar-arrow-color: red;
+    scrollbar-width:thin;
+}
+
+.topManga .container .listTopManga:hover {
+    transition: all 0.2s linear;
+    scrollbar-color: #FF6EC1 #292929;
+}
+
+.topManga .container .listTopManga div img {
+    max-height: 350px;
+    min-height: 350px;
+    object-fit: fill;
+}
+
+.topManga .container .listTopManga div {
+    cursor: pointer;
+}
+
+.topManga .container .listTopManga div h2 {
+    font-size: 22px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    max-width: 250px;
+}
+
+.topManga .container .listTopManga div p {
+    font-size: 14px;
+}
+
+.topManga .container .listTopManga div:nth-child(1) {
+    margin-left: 10px;
+}
+
+*::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-track {
+    border-radius: 10px;
+}
+
+.topManga .container .listTopManga img {
+    width: 250px;
+    border-radius: 3px;
+}
+
+.topManga .container .listTopManga p:nth-child(4) {
+    color: var(--gray-text);
+}
+
+.topManga .container {
+    position: relative;
+}
+
+.topManga .container .arrows img {
+    width: 40px;
+    cursor: pointer;
+}
+
+.topManga .container .arrows img:nth-child(1) {
+    position: absolute;
+    left: 40px;
+    top:88px;
+    min-height: 445px;
+    background-color: rgba(255, 255, 255, 0.3);
+    transition: all 200ms ease-out;
+}
+
+.topManga .container .arrows img:nth-child(2) {
+    position: absolute;
+    right: 40px;
+    top:88px;
+    min-height: 445px;
+    background-color: rgba(255, 255, 255, 0.3);
+    transition: all 200ms ease-out;
+}
+
+.topManga .container .arrows img:nth-child(1):hover,.topManga .container .arrows img:nth-child(2):hover {
+    background-color: rgba(255, 255, 255, 0.8);
+}
+
+.topManga .container .listTopManga div.cardClicked {
+    position: fixed;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    top: 0px;
+    padding-top: 50px;
+    justify-content: baseline;
+    gap: 10px;
+    left: 0px;
+    width: 100vw;
+    height: calc(100vh);
+    background-color: var(--bg);
+    cursor:auto; 
+}
+
+.topManga .container .listTopManga div.cardClicked p {
+    font-size: 16px;
+    color: #fff;
+}
+
+.topManga .container .listTopManga div.cardClicked #pSet {
+    overflow:hidden;
+    text-overflow: ellipsis;
+    white-space: wrap;
+    max-width: 400px;
+}
+
+.topManga .container .listTopManga div.cardClicked #pSet:before {
+    content: "Título: ";
+    color: var(--bubble);
+    cursor: default;
+}
+
+.topManga .container .listTopManga div.cardClicked .moreInfo div  {
+    display: flex;
+    gap: 5px;
+    cursor: text;
+}
+
+.topManga .container .listTopManga div.cardClicked .moreInfo {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    cursor: default;
+}
+
+.topManga .container .listTopManga div.cardClicked #gen,.topManga .container .list2 div.cardClicked #adp  {
+    display: none;
 }
 
 @media (max-width: 425px) {
-    
-
     #webSiteTitle {
         font-size: 18px;
     }
@@ -795,6 +1425,8 @@ header nav ul li a:hover{
         transition: all 0.2s linear;
     }
 
+
+
     #animeActualMain {
         font-size: 13px !important;
     }
@@ -816,9 +1448,240 @@ header nav ul li a:hover{
     .seasons .container {
         padding: 10px 0px;
     }
+
+    .seasons2 .container {
+        padding: 10px 0px;
+    }
+
+    .seasons2 .container span {
+        font-size: 16px;
+        border: solid var(--bubble) 1px;
+        border-radius: 3px;
+        padding: 3px;
+    }
+
+    .seasons2 .container .list2 div img {
+        padding-bottom: 0px;
+        padding-left: 0px;
+        padding-right: 0px;
+        object-fit: cover;
+        max-width: 150px;
+    }
+
+    .seasons2 .container #h1id2 {
+        text-align: center;
+        display: flex;
+        justify-content: center;
+    }
+
+    h1#seasons2-h1 {
+        font-size: 20px;
+        text-align: center;
+        line-height: 30px;
+        max-width: 350px;
+    }
+
+    .seasons2 .container .list2 {
+        padding-bottom: 40px;
+    }
+
+    .seasons2 .container .arrows {
+        display: none;
+    }
+
+    .seasons2 .container .list2 div img {
+        max-height: 200px;
+        min-height: 200px;
+        max-width: 140px;
+        min-width: 140px;
+        object-fit: cover;
+        padding: 10px 0px 3px 0px;
+        border-radius: 6px;
+    }
+
+    .seasons2 .container .list2 div h2 {
+        font-size: 13px;
+        max-width: 145px;
+    }
+
+    .seasons2 .container .list2 div p {
+        font-size: 11px;
+        margin-top: 3px;
+    }
+
+    .seasons2 .container .list2 {
+        scrollbar-color: #FF6EC1 #292929;
+        scrollbar-arrow-color: red;
+        scrollbar-width:thin;
+    }
+    
+    .seasons2 .container .list2:hover {
+        transition: all 0.2s linear;
+    }
+
+    .topAnime .container {
+        padding: 10px 0px;
+    }
+
+    .topAnime .container span {
+        font-size: 16px;
+        border: solid var(--bubble) 1px;
+        border-radius: 3px;
+        padding: 3px;
+    }
+
+    .topAnime .container .listTopAnime div img {
+        padding-bottom: 0px;
+        padding-left: 0px;
+        padding-right: 0px;
+        object-fit: cover;
+        max-width: 150px;
+    }
+
+    .topAnime .container #h1id3 {
+        text-align: center;
+        display: flex;
+        justify-content: center;
+    }
+
+    h1#seasons3-h1 {
+        font-size: 20px;
+        text-align: center;
+        line-height: 30px;
+        max-width: 350px;
+    }
+
+    .topAnime .container .listTopAnime {
+        padding-bottom: 40px;
+    }
+
+    .topAnime .container .arrows {
+        display: none;
+    }
+
+    .topAnime .container .listTopAnime div img {
+        max-height: 200px;
+        min-height: 200px;
+        max-width: 140px;
+        min-width: 140px;
+        object-fit: cover;
+        padding: 10px 0px 3px 0px;
+        border-radius: 6px;
+    }
+
+    .topAnime .container .listTopAnime div h2 {
+        font-size: 13px;
+        max-width: 145px;
+    }
+
+    .topAnime .container .listTopAnime div p {
+        font-size: 11px;
+        margin-top: 3px;
+    }
+
+    .topAnime .container .listTopAnime {
+        scrollbar-color: #FF6EC1 #292929;
+        scrollbar-arrow-color: red;
+        scrollbar-width:thin;
+    }
+    
+    .topAnime .container .listTopAnime:hover {
+        transition: all 0.2s linear;
+    }
+
+    .topManga .container {
+        padding: 10px 0px;
+    }
+
+    .topManga .container span {
+        font-size: 16px;
+        border: solid var(--bubble) 1px;
+        border-radius: 3px;
+        padding: 3px;
+    }
+
+    .topManga .container .listTopManga div img {
+        padding-bottom: 0px;
+        padding-left: 0px;
+        padding-right: 0px;
+        object-fit: cover;
+        max-width: 150px;
+    }
+
+    .topManga .container #h1id4 {
+        text-align: center;
+        display: flex;
+        justify-content: center;
+    }
+
+    h1#seasons4-h1 {
+        font-size: 20px;
+        text-align: center;
+        line-height: 30px;
+        max-width: 350px;
+    }
+
+    .topManga .container .listTopManga {
+        padding-bottom: 40px;
+    }
+
+    .topManga .container .arrows {
+        display: none;
+    }
+
+    .topManga .container .listTopManga div img {
+        max-height: 200px;
+        min-height: 200px;
+        max-width: 140px;
+        min-width: 140px;
+        object-fit: cover;
+        padding: 10px 0px 3px 0px;
+        border-radius: 6px;
+    }
+
+    .topManga .container .listTopManga div h2 {
+        font-size: 13px;
+        max-width: 145px;
+    }
+
+    .topManga .container .listTopManga div p {
+        font-size: 11px;
+        margin-top: 3px;
+    }
+
+    .topManga .container .listTopManga {
+        scrollbar-color: #FF6EC1 #292929;
+        scrollbar-arrow-color: red;
+        scrollbar-width:thin;
+    }
+    
+    .topManga .container .listTopManga:hover {
+        transition: all 0.2s linear;
+    }
+
+    .seasons2 #h1id2 {
+        text-align: center;
+    }
+
+    #seasons2-h1 {
+        max-width: 300px !important;
+    }
+
+    #malIcon {
+        position: absolute;
+        left: -30px !important;
+        top: -5px;
+    }
+
 }
 
 @media (max-width: 375px) {
+    h1#seasons4-h1 {
+        font-size: 17px;
+        text-align: center;
+        line-height: 30px;
+        max-width: 350px;
+    }
     #webSiteTitle {
         font-size: 14px;
     }
@@ -826,6 +1689,18 @@ header nav ul li a:hover{
         font-size: 16px !important;
     }
     .seasons .container span {
+        font-size: 14px;
+    }
+    #seasons2-h1 {
+        font-size: 16px !important;
+    }
+    .topAnime .container span {
+        font-size: 14px;
+    }
+    #seasons3-h1 {
+        font-size: 16px !important;
+    }
+    .seasons2 .container span {
         font-size: 14px;
     }
     #quick-acess a {
@@ -841,5 +1716,45 @@ header nav ul li a:hover{
         max-width: 300px;
         max-height: 250px;
     }
+    #malIcon {
+        position: absolute;
+        left: -0px !important;
+        top: -5px;
+    }
+}
 
+#malIcon {
+    position: absolute;
+    left: -45px;
+    top: -5px;
+}
+
+#seasons2-h1 {
+    position: relative;
+    margin-left: 50px;
+}
+
+#malTitle {
+    padding: 0;
+    border: none;
+    background-color: transparent !important;
+    text-transform: capitalize;
+    color: rgb(0, 132, 255);
+}
+
+@media (max-width: 425px) {
+    #seasons2-h1 {
+        margin-left: 0px;
+    }
+    #malIcon {
+        margin-left: 0px;
+        position: absolute;
+        left: -0px;
+        top: -5px;
+    }
+}
+
+#rank {
+    margin-top: 4px;
+    color: var(--bubble);
 }
