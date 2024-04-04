@@ -1,4 +1,5 @@
 # RCodeAnimes
+## Acesse o projeto clicando aqui: https://solicmoba.github.io/RCodeAnimes/
 
 ## Esse projeto vai conter: Catálogo de animes, Listagem de animes da temporada, e Sugestões de animes.
 
@@ -64,7 +65,7 @@ Observações: Como pode ver o projeto não tem muitas tecnologias devido as min
 - **Promessa 1 (❤️):** Em breve vou aprender sobre esse conceito, e vou refazer esse projeto, ou talvez outro mas com a mesma pegada desse, mas da próxima vez utilizando algum framework que provavelmente vai ser o React.JS já que já tenho alguma noção dele e me sinto mais confortável em trabalhar usando ele.
 - **Atualização 2 (🟢):** Melhorado algumas sessões no quesito responsividade para telas menores.
 
-- **Atualização 2 (🟡):** O site está funcional para navegadores no dedsktops, porém em dispositivos móveis pode surgir alguns problemas na troca de página ao clicar em cards, em breve pretendo arrumar isso.
+- **Atualização 2 (🟡):** O site está funcional para navegadores no desktops, porém em dispositivos móveis pode surgir alguns problemas na troca de página ao clicar em cards, em breve pretendo arrumar isso.
 
 > Creio que seja isso, o site está quase pronto, e pela primeira vez eu fiz um projeto do início ao fim, não precisando de muita ajuda da web e ter conseguido aprender com os erros de logs, como dizia um grande sábio:
 
