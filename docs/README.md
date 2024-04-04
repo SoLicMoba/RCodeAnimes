@@ -47,6 +47,14 @@ Observações: Como pode ver o projeto não tem muitas tecnologias devido as min
 - **Atualização 3 (🟢):** Agora, quando o usuário clica em algum anime da listagem, é redirecionado para outra página com todas as informações úteis sobre o anime, como ano, título, título em inglês, título em japonês, temporada, ranking, popularidade, gêneros, fonte (ex: adaptado pela light novel) e quantidade de episódios. Optei por essa solução por não ter conhecimento prévio de react.js e, portanto, não poder usar o react router. Assim, quando o usuário clica em algum card, o JavaScript cria uma nova camada de CSS para cobrir tudo e cria o HTML diretamente pelo arquivo de JS.
 - **Atualização 3 (🟢):** Na parte inicial do site, a imagem de *Animes da Temporada* (que antes era fixa) agora tem função aleatória para mostrar qualquer anime da temporada. Acredito que dessa forma o site fica mais dinâmico e não apenas uma imagem e título fixo.
 
+### Dia 4 - Melhora nas funcionalidades atuais do site
+> Hoje eu concertei muita coisa, e também apliquei muito conteúdo novo.
+
+> **Progresso:**
+
+- **Atualização 1 (🟢):** Quando o usuário clica na lupa de pesquisa, agora ela abre uma "nova página" onde ele pode pesquisar por um conteúdo específico e é carregado 25 resultados (no momento só aceita nomes de animes).
+- **Atualização 2 (🟢):** Melhorado o Design para dispositívos móveis.
+
 
 ## License
 Copyright (c) 2024 Richard Re'Code

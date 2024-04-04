@@ -22,6 +22,73 @@ function mudarImgMenu() {
   menuAberto = !menuAberto;
 }
 
+document.querySelector("#header-search-img").addEventListener("click", () => {
+  const search = document
+    .querySelector("#header-search-active");
+  search.classList.toggle("search-area-active");
+  
+  if (search.classList.contains("search-area-active")) {
+    document.body.style.overflow = "hidden";
+  } else {
+    document.body.style.overflow = "visible";
+  }
+    
+  
+});
+
+let timeoutId;
+
+const inputGet = document
+  .querySelector("#input-sectionSearch")
+  .addEventListener("input", async (e) => {
+    clearTimeout(timeoutId);
+
+    timeoutId = setTimeout(async () => {
+      async function searchContent() {
+        const userInput = e.target.value.trim();
+        if (!userInput) return;
+
+        try {
+          const response = await fetch(`${api}/anime?q=${userInput}`);
+          const json = await response.json();
+          const data = Array.isArray(json.data) ? json.data : [json.data];
+
+          const listMain = document.querySelector(".sectionSearch-content");
+          console.log(json.data);
+          console.log(userInput);
+          console.log(data);
+
+          listMain.innerHTML = "";
+
+          for (let i of data) {
+            const genres = i.genres.map(genre => genre.name).join(", ");
+            const newList = `
+              <div class="content">
+                <img src="${i.images.jpg.image_url}" alt="photo">
+                <p id="ss-title">${i.title}</p>
+                <p id="ss-genre"><strong>Gênero:</strong> ${genres}</p>
+                <p id="ss-adp"><strong>Adaptação:</strong> ${i.source}</p>
+              </div>
+            `;
+            listMain.innerHTML += newList;
+          }
+        } catch (error) {
+          document.querySelector(".sectionSearch-content").innerHTML = `
+            <h1 style="font-size: 25px;">Olá! Parece que ocorreu um erro :(</h1>
+            <div style="font-size: 20px; display: flex; flex-direction: column;align-items: center;">
+              Por favor, <br/> entre em contato comigo <br/> para eu resolver isso! <br/>
+              @3u_richard ou @richard_recode | Obrigado(a)! <br/> <br/>
+              <img width="300px" src="./assets/img/anime-gif.gif" alt="anime-gif"/>
+            </div>
+            `;
+          console.error("Erro ao buscar anime:", error);
+        }
+      }
+
+      searchContent();
+    }, 500);
+  });
+
 async function lastNotices() {
   const response = await fetch(`${api}/reviews/anime`);
   const json = await response.json();
@@ -150,7 +217,7 @@ async function seasons() {
   const response = await fetch(`${api}/seasons/upcoming`);
   const json = await response.json();
   const seasonList = json.data;
-  console.log(seasonList);
+  /* console.log(seasonList); */
 
   /* document.querySelector('#imgMain').src = */
 

@@ -49,7 +49,7 @@ header {
 }
 
 header .leftside {
-    cursor: pointer;
+    cursor: default;
 }
 
 header .leftside, .rightside {
@@ -86,10 +86,147 @@ header .rightside nav .search input {
 }
 
 header .rightside nav .search img {
-    position: absolute;
-    left: 5px;
-    top: 3px;
+    width: 30px;
     cursor: pointer;
+    transition: all 200ms linear;
+}
+
+header .rightside nav .search img:hover {
+    background: var(--bubble);
+    filter: none !important;
+    border-radius: 50px;
+    padding: 2px;
+}
+
+/* Header Search */
+
+#header-search-active {
+    display: none;
+}
+
+.search-area-active {
+    display: flex !important;
+    position: fixed;
+    align-items: center;
+    background-color: var(--bg);
+    top: 110px;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: 99;
+    flex-direction: column;
+    overflow-y: scroll;
+
+}
+
+#ss-search {
+    display: flex;
+    justify-content: center;
+}
+
+.search-area-active #ss-search input {
+    width: 60vw;
+    border: solid 1px #fff;
+    padding: 10px;
+    outline: none;
+    font-size: 26px;
+    border-radius: 5px;
+    background-color: transparent;
+    margin-bottom: 100px;
+    color: #fff;
+}
+
+.sectionSearch-content {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+    max-width: 1200px;
+    padding-bottom: 300px;
+
+}
+
+.sectionSearch-content .content {
+    font-family: 'Ubuntu', Arial, Helvetica, sans-serif;
+    max-width: 200px;
+    border-radius: 10px;
+}
+
+.sectionSearch-content .content img {
+    max-width: 200px;
+    min-width: 200px;
+    max-height: 250px;
+    min-height: 250px;
+    object-fit: cover;
+    border-radius: 10px 10px 0 0;
+}
+
+.sectionSearch-content .content p {
+    font-size: 18px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    max-width: 100%;
+}
+
+#ss-title {
+    font-weight: 500;
+}
+
+#ss-genre {
+    font-size: 13px;
+}
+
+#ss-adp {
+    font-size: 13px;
+}
+
+@media (max-width: 425px) {
+    .search-area-active #ss-search input {
+        font-size: 16px;
+    }
+
+    .sectionSearch-content .content img {
+        max-width: 150px;
+        min-width: 150px;
+        max-height: 180px;
+        min-height: 180px;
+        object-fit: cover;
+        border-radius: 10px 10px 0 0;
+    }
+
+    .sectionSearch-content .content {
+        font-family: 'Ubuntu', Arial, Helvetica, sans-serif;
+        max-width: 150px;
+        border-radius: 10px;
+    }
+
+    #ss-title {
+        font-size: 12px;
+    }
+    
+    #ss-genre {
+        font-size: 10px;
+    }
+    
+    #ss-adp {
+        font-size: 10px;
+    }
+
+    .sectionSearch-content {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 20px;
+    }
+}
+
+@media (max-width: 350px) {
+    .sectionSearch-content {
+        flex-direction: column;
+        align-items: center;
+    }
+
 }
 
 .menu {
@@ -149,23 +286,24 @@ header nav ul li a:hover{
     }
 
     header .leftside img {
-        width: 150px;
+        width: 140px;
+        padding-top: 5px;
     }
 
     header .rightside nav .search input {
-        min-width: 135px;
-        font-size: 10px;
-        padding: 0 0px 0px 20px;
-        height: 20px; 
+        min-width: 150px;
+        font-size: 11.5px;
+        padding: 10px 0px 10px 22px;
+        height: 25px; 
     }
 
     header .rightside nav .search img {
-        width: 15px;
-        top: 5px;
+        width: 30px;
+        margin-top: 5px;
     }
 
     header .rightside .menu img {
-        width: 25px;
+        width: 35px;
     }
 
     header .rightside nav .search {
@@ -206,6 +344,7 @@ header nav ul li a:hover{
     display: flex;
     font-family: "Ubuntu", sans-serif;
     margin-top: 30px;
+    
 }
 
 .highlighted .container .leftside {
@@ -232,6 +371,7 @@ header nav ul li a:hover{
 }
 
 .highlighted .container .rightside {
+    text-transform: uppercase;
     flex: 1;
 }
 
@@ -265,7 +405,7 @@ header nav ul li a:hover{
 #quick-acess {
     margin-top: 70px;
     display: flex;
-    gap: 52px;
+    gap: 10px;
 }
 
 #quick-acess a {
@@ -568,13 +708,29 @@ header nav ul li a:hover{
 }
 
 @media (max-width: 425px) {
+    
+
+    #webSiteTitle {
+        font-size: 18px;
+    }
+
+    #quick-acess a {
+        border: #aaa 2px solid;
+        padding: 5px;
+        font-size: 10px;
+        font-weight: 500;
+        text-transform: uppercase;
+        border-radius: 2px;
+        transition: all 0.1s ease;
+    }
+
     .contentImgs2 h3 {
         font-size: 14px;
         text-align: center;
     }
 
     .seasons .container span {
-        font-size: 12px;
+        font-size: 16px;
         border: solid var(--bubble) 1px;
         border-radius: 3px;
         padding: 3px;
@@ -588,14 +744,21 @@ header nav ul li a:hover{
         max-width: 150px;
     }
 
-    h1#seasons-h1 {
-        font-size: 14px;
+    .seasons .container #h1id {
         text-align: center;
-        line-height: 20px;
+        display: flex;
+        justify-content: center;
+    }
+
+    h1#seasons-h1 {
+        font-size: 20px;
+        text-align: center;
+        line-height: 30px;
+        max-width: 350px;
     }
 
     .seasons .container .list {
-        padding-bottom: 20px;
+        padding-bottom: 40px;
     }
 
     .seasons .container .arrows {
@@ -603,22 +766,22 @@ header nav ul li a:hover{
     }
 
     .seasons .container .list div img {
-        max-height: 170px;
-        min-height: 170px;
-        max-width: 110px;
-        min-width: 110px;
+        max-height: 200px;
+        min-height: 200px;
+        max-width: 140px;
+        min-width: 140px;
         object-fit: cover;
-        padding: 5px 0px 0px 3px;
+        padding: 10px 0px 3px 0px;
         border-radius: 6px;
     }
 
     .seasons .container .list div h2 {
-        font-size: 12px;
-        max-width: 110px;
+        font-size: 13px;
+        max-width: 145px;
     }
 
     .seasons .container .list div p {
-        font-size: 9px;
+        font-size: 11px;
         margin-top: 3px;
     }
 
@@ -631,4 +794,52 @@ header nav ul li a:hover{
     .seasons .container .list:hover {
         transition: all 0.2s linear;
     }
+
+    #animeActualMain {
+        font-size: 13px !important;
+    }
+
+    .highlighted .container .contentImgs img {
+        margin-top: 5px;
+        object-fit: cover;
+        border-radius: 10px;
+        padding-top: 5px;
+    }
+    
+    #imgMain {
+        text-align: center;
+        min-width: 350px;
+        max-width: 350px;
+        max-height: 250px;
+    }
+
+    .seasons .container {
+        padding: 10px 0px;
+    }
+}
+
+@media (max-width: 375px) {
+    #webSiteTitle {
+        font-size: 14px;
+    }
+    #seasons-h1 {
+        font-size: 16px !important;
+    }
+    .seasons .container span {
+        font-size: 14px;
+    }
+    #quick-acess a {
+        padding: 3px;
+        font-size: 8px;
+    }
+    #animeActualMain {
+        font-size: 11px !important;
+    }
+    #imgMain {
+        text-align: center;
+        min-width: 300px;
+        max-width: 300px;
+        max-height: 250px;
+    }
+
 }

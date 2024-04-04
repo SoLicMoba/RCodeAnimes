@@ -12,21 +12,25 @@
     <link rel="stylesheet" href="./assets/css/style.css" />
   </head>
   <body>
-    <header id="inicio">
+    <header>
       <div class="container">
         <div class="leftside">
           <a href="#inicio">
-            <img src="./assets/img/Logo-header.png" alt="logo" width="180px" />
+            <img
+              src="./assets/img/Logo-header.png"
+              id="inicio"
+              alt="logo"
+              width="180px"
+            />
           </a>
         </div>
         <div class="rightside">
           <nav>
             <div class="search" id="header-search">
-              <img src="./assets/img/search.svg" style="filter: invert()" />
-              <input
-                type="search"
-                placeholder="Pesquise pelo nome..."
-                id="header-input"
+              <img
+                src="./assets/img/search.svg"
+                style="filter: invert()"
+                id="header-search-img"
               />
             </div>
             <ul>
@@ -58,6 +62,21 @@
     </header>
 
     <main>
+      <section id="header-search-active" class="">
+        <div class="sectionSearch-search">
+          <div id="ss-search">
+            <input type="text" placeholder="Pesquise pelo nome..." id="input-sectionSearch"/>
+          </div>
+          <div class="sectionSearch-content">
+            <!-- <div class="content">
+                <img src="./assets/img/noticiasimg.jpg" alt="photo">
+                <p id="ss-title">Konosubarashii na kaete ad</p>
+                <p id="ss-genre"><strong>Gênero:</strong> Fantasia</p>
+                <p id="ss-adp"><strong>Adaptação:</strong> Light Novel</p>
+            </div> -->
+          </div>
+        </div>
+      </section>
       <section class="highlighted">
         <div class="container">
           <div class="leftside">
@@ -66,7 +85,7 @@
               <a href="#">
                 <img
                   id="imgMain"
-                  src="#"
+                  src="./assets/img/noticiasimg.jpg"
                   alt="carregando..."
                   style="object-fit: cover top"
                 />
@@ -78,10 +97,10 @@
                     white-space: nowrap;
                     overflow: hidden;
                     text-overflow: ellipsis;
-                    max-width: 500px;
+                    max-width: 320px;
                   "
                 ></p>
-                <p style="color: #353535; cursor: default">
+                <p style="color: #555; cursor: default">
                   Mais conteúdo no decorrer do site!
                 </p>
               </a>
@@ -99,7 +118,9 @@
                 <img src="./assets/img/noticiasimg.jpg" alt="mix-animes" />
                 <p>últimas reviews em primeiro mão!</p>
               </a>
-              <h3 style="text-transform: uppercase">Alguns reviews rápidos</h3>
+              <h3 style="text-transform: uppercase; margin-top: 15px">
+                Alguns reviews rápidos
+              </h3>
               <div class="contentImgs-notices"></div>
             </div>
           </div>
@@ -108,9 +129,11 @@
 
       <section class="seasons" id="seasons">
         <div class="container">
-          <h1 id="seasons-h1">
-            <span>Novos</span> Animes e continuações da temporada de
-          </h1>
+          <div id="h1id">
+            <h1 id="seasons-h1">
+              <span>Novos</span> Animes e continuações da Temporada de
+            </h1>
+          </div>
           <div class="list-content">
             <div class="arrows">
               <img
@@ -127,8 +150,7 @@
               />
             </div>
           </div>
-          <div class="list">
-          </div>
+          <div class="list"></div>
         </div>
       </section>
     </main>
