@@ -71,5 +71,10 @@ Observações: Como pode ver o projeto não tem muitas tecnologias devido as min
 
 > A programação é = tentar algo novo => errar => pesquisar => (resolver) { return; }
 
+### Dia 6 - Solução para API (1h)
+> Notei que sempre que meu código era relogado (F5)
+,acontecia um problema onde a API retornava o erro (429 Too Many Requests). Com isso eu me frustrei no dia que ocorreu, e para solucionar eu adicionei um setTimeout() de 3 segundos, que é o tempo para requisitar a API por vez, então com isso os problemas diminuiram.
+
+
 ## License
 Copyright (c) 2024 Richard Re'Code

@@ -1758,3 +1758,12 @@ header nav ul li a:hover{
     margin-top: 4px;
     color: var(--bubble);
 }
+
+.loading {
+    position: absolute;
+    display: flex;
+    font-size: 20px;
+    text-align: center;
+    height: 489px;
+    z-index: 5;
+}

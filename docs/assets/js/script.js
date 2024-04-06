@@ -358,7 +358,7 @@ async function topAnimes() {
     htmlList.appendChild(newList);
   }
 }
-topAnimes();
+
 
 async function topMangas() {
   const response = await fetch(`${api}/top/manga`);
@@ -378,13 +378,13 @@ async function topMangas() {
     htmlList.appendChild(newList);
   }
 }
-topMangas();
-
-async function topTeste() {
-  const response = await fetch(`https://api.jikan.moe/v4/random/anime`);
-  const json = await response.json();
-}
-topTeste();
+setTimeout(() => {
+  topAnimes();
+  topMangas();
+  document.querySelectorAll('.loading').forEach((e) => {
+    e.style.display = 'none';
+  })
+},3000)
 
 document.addEventListener("DOMContentLoaded", function () {
   const scrollList = document.querySelector(".list");
@@ -423,4 +423,14 @@ document.addEventListener("DOMContentLoaded", function () {
   left.addEventListener("click", () => {
     scrollList.scrollLeft -= 750;
   });
+});
+
+window.addEventListener('popstate', function(event) {
+  // Verifica se houve uma alteração no histórico de navegação
+  if (history.state !== null && history.state.url !== undefined) {
+      // Recarrega a página apenas se o estado do histórico contiver a URL da página atual
+      if (history.state.url === window.location.href) {
+          window.location.reload();
+      }
+  }
 });
